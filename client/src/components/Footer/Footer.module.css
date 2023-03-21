@@ -1,0 +1,12 @@
+.container footer {
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.container p {
+  padding: 1.7rem;
+  font-size: 1rem;
+}

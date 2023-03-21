@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background: #424242 url(../../img/fondoBar.png);
+  box-shadow: 0 8px 2px rgba(0, 0, 0, 0.25);
+}
+.navbar img {
+  width: 8rem;
+}
+@media (max-width: 500px) {
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+}

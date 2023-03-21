@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: rgb(224, 223, 223);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(140, 136, 132);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(74, 70, 66);
+}

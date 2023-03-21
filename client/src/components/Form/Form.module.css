@@ -1,0 +1,88 @@
+.form {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.container {
+  display: grid;
+  place-items: center;
+  border-radius: 2rem;
+  background: url(../../img//fondoBar.png);
+  box-shadow: 10px 16px 10px rgba(0, 0, 0, 0.25),
+    inset 10px 6px 10px rgba(0, 0, 0, 0.25);
+}
+
+.inputs {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 20rem 20rem;
+  outline: none;
+  padding: 2rem;
+}
+
+.input {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.input input {
+  font-size: 1.5rem;
+  outline: none;
+}
+.input label {
+  font-weight: bold;
+  color: #fff;
+  margin-right: 0.5rem;
+}
+.input p {
+  color: #ff0000;
+  font-size: 1rem;
+}
+
+.container button {
+  margin: 1rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  background-color: rgb(237, 241, 7);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.container button:active {
+  opacity: 0.8;
+}
+
+.container select {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+  background-color: #313131;
+  color: #fff;
+  padding: 0.5rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+}
+
+@media (max-width: 500px) {
+  .inputs {
+    grid-template-columns: 1fr;
+  }
+  .input {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+  }
+  .input input {
+    font-size: 1rem;
+    outline: none;
+  }
+  .container button {
+    padding: 0.5rem;
+  }
+  .container{
+    margin-bottom: 4rem;
+    border-radius: 1rem;
+  }
+}

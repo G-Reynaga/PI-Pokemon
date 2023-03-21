@@ -1,0 +1,50 @@
+.hamburguesa {
+  width: 35px;
+  height: 30px;
+  margin: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+.hamburguesa span {
+  background-color: #fff;
+  position: absolute;
+  border-radius: 2px;
+  transition: 0.3s cubic-bezier(0.8, 0.5, 0.2, 1.4);
+  width: 100%;
+  height: 4px;
+  transition-duration: 500ms;
+}
+.hamburguesa span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+}
+.hamburguesa span:nth-child(2) {
+  top: 13px;
+  left: 0px;
+  opacity: 1;
+}
+.hamburguesa span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+}
+.hamburguesa:not(.open):hover span:nth-child(1) {
+  transform: rotate(-3deg) scaleY(1.1);
+}
+.hamburguesa:not(.open):hover span:nth-child(2) {
+  transform: rotate(3deg) scaleY(1.1);
+}
+.hamburguesa:not(.open):hover span:nth-child(3) {
+  transform: rotate(-4deg) scaleY(1.1);
+}
+.hamburguesa.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 13px;
+}
+.hamburguesa.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburguesa.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 13px;
+}

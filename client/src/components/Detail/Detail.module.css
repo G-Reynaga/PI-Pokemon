@@ -1,0 +1,146 @@
+.container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+.container button {
+  margin: 1rem;
+  font-size: 1rem;
+  border-radius: 1rem;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+  background-color: rgb(237, 241, 7);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.container button:active {
+  opacity: 0.5;
+}
+.posicion {
+  background-color: #313131;
+  display: flex;
+  justify-content: center;
+  border-top-right-radius: 5rem;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+}
+.posicion h1 {
+  margin-right: 2rem;
+}
+.image {
+  background: transparent url(../../img//gray_bg.png);
+  display: flex;
+  justify-content: center;
+}
+.datos {
+  background-color: #30a7d7;
+  padding: 2rem;
+  border-bottom-left-radius: 5rem;
+  columns: 3;
+}
+.datos h3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .container button {
+    padding: 1rem;
+  }
+  .posicion {
+    font-size: 0.8rem;
+    padding: 2rem;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .image img {
+    width: 14rem;
+  }
+  .datos {
+    font-size: 0.8rem;
+    columns: 2;
+  }
+  .datos h3{
+    padding: 0.2rem;
+  }
+}
+
+.types {
+  display: flex;
+  gap: 1rem;
+}
+
+.types span {
+  padding: 5px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+
+.grass {
+  background-color: #9bcc50;
+}
+.fire {
+  background-color: #ff7402;
+}
+.steel {
+  background-color: #9eb7b8;
+}
+.water {
+  background-color: #4592c4;
+}
+.psychic {
+  background-color: #f366b9;
+}
+.ground {
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+}
+.ice {
+  background-color: #51c4e7;
+}
+.flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+}
+.ghost {
+  background-color: #4d5b64;
+}
+.normal {
+  background-color: #a4acaf;
+}
+.poison {
+  background-color: #7e0058;
+}
+.rock {
+  background-color: #a38c21;
+}
+.fighting {
+  background-color: #d56723;
+}
+.dark {
+  background-color: #707070;
+}
+.bug {
+  background-color: #729f3f;
+}
+.dragon {
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+.electric {
+  background-color: #bba909;
+}
+.fairy {
+  background-color: #fdb9e9;
+}
+.shadow {
+  background-color: #7b62a3;
+}
+.unknow {
+  background-color: #757575;
+}

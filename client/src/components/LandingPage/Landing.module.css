@@ -1,0 +1,63 @@
+.container {
+  background: url(../../img/fondo.jpg) center center;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container div {
+  border-radius: 3rem;
+  width: 50rem;
+  height: 50rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 10px 16px 10px rgba(0, 0, 0, 0.10);
+  display: grid;
+  place-items: center;
+}
+
+.container img {
+  width: 40rem;
+}
+
+.container h1 {
+  font-size: 3rem;
+}
+
+.container button {
+  width: 10rem;
+  height: 3rem;
+  border: 1px solid rgb(163, 159, 24);
+  border-radius: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(231, 225, 39, 0);
+  transition: 0.2s;
+}
+
+.container button:hover {
+  width: 15rem;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+
+.container button:active {
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .container div{
+    width: 20rem;
+    height: 22rem;
+  }
+  .container img{
+    width: 15rem;
+  }
+  .container h1 {
+    font-size: 1.5rem;
+  }
+  .container button{
+    font-size: 1rem;
+  }
+}

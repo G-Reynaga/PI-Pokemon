@@ -1,0 +1,34 @@
+.container{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.error{
+    background: url(../../img/gray_bg.png);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30rem;
+    box-shadow: 10px 16px 6px rgba(0, 0, 0, 0.25);
+}
+.error h1 {
+    font-size: 8rem;
+    text-shadow: 5px 5px 3px rgb(211, 194, 12);
+}
+.error img{
+    width: 15rem;
+}
+.error button {
+  margin: 1rem;
+  cursor: pointer;
+  border: none;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  background-color: rgb(237, 241, 7);
+}
+.error button:active {
+  opacity: 0.5;
+}
