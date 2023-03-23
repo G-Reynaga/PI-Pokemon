@@ -7,6 +7,7 @@ const getAllApi = async () => {
     const promises = [];
     // while (promises.length < 160) {}
     let url = URL_API_POKEMON;
+    //me permite obtener los pokemons de la pokeapi
     const { data } = await axios.get(`${url}?limit=151&offset=0`);
     promises.push(...data.results);
     // url = data.next;
@@ -40,34 +41,48 @@ const getAllApi = async () => {
 const getAllDb = async () => {
   try {
     let pkDb = [];
+    //trae los pokemones, que incluyan el nombre del type (tipo join)
     pkDb = await Pokemon.findAll({
-      includes: [
+      include: [
         {
           model: Type,
           attributes: ["name"],
           through: { attributes: [] },
+          as: "types",
         },
       ],
     });
     if (!pkDb.length) {
       return [];
     }
-    let cleanPkDb = pkDb.map((pokemon) => ({
+
+    let foundPkDb = pkDb.map((pokemon) => ({
       ...pokemon.toJSON(),
-      Type: pokemon.Types.map((type) => type.name + " "),
+      Types: pokemon.types.map((type) => type.name).join(" "),
     }));
-    return cleanPkDb;
+    return foundPkDb;
   } catch (error) {
     return error.message;
   }
 };
 
+//me permite unir el array que me devuelve la pokeapi pokemons + los pokemons creados en la DB
 const getAll = async () => {
   try {
-    let pkFromApi = await getAllApi();
     let pkFromDb = await getAllDb();
+
+    if (!pkFromDb.length) {
+      // throw new Error("No Pokemons Found in Database");
+      pkFromDb = [];
+    }
+
+    let pkFromApi = await getAllApi();
     let allPk = pkFromApi.concat(pkFromDb);
-    if (!allPk.length) throw new Error("No Pokemons Found");
+
+    if (!allPk.length) {
+      throw new Error("No Pokemons Found");
+    }
+
     return allPk;
   } catch (error) {
     return error.message;

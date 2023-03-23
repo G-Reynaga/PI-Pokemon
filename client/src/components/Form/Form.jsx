@@ -21,11 +21,22 @@ const Form = () => {
     height: "",
     weight: "",
     image: "",
-    Types: [],
+    Types: "",
+    // Types2: [],
   });
 
   //aqui vamos a validar que la informacion que se va ingresar al estado sea correcta con lo requerido
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({
+    // name: "",
+    // life: "",
+    // attack: "",
+    // defense: "",
+    // speed: "",
+    // height: "",
+    // weight: "",
+    // image: "",
+    // Types: "",
+  });
 
   // const handleInputChange = (e) => {
   //   setPkData({
@@ -56,11 +67,13 @@ const Form = () => {
     }));
   };
 
+  // Check if any errors exist
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const errors = validate(pkData);
     try {
-      if (Object.keys(errors).length > 0) {
-        await axios.post("http://localhost:3001/pokemons/", pkData);
+      if (Object.keys(errors).length === 0) {
+        await axios.post("http://localhost:3001/pokemon/", pkData);
         // alert("Pokemon Created SuccesFully");
         Swal.fire({
           title: "¡Good Job.!",
@@ -79,7 +92,7 @@ const Form = () => {
         });
       }
     } catch (error) {
-      console.error(error);
+      return error.message;
     }
   };
 
@@ -176,21 +189,38 @@ const Form = () => {
                 />
                 <p>{errors.weight}</p>
               </div>
-              <div className={styles.input}>
-                <label htmlFor="types">Type</label>
+            </div>
+            <div className={styles.select}>
+              <label htmlFor="type">Type 1</label>
+              <select
+                name="Types"
+                value={pkData.Types}
+                onChange={handleInputChange}
+              >
+                <option value="">Select Type</option>
+                {types.map((type, index) => (
+                  <option key={index} value={type.name}>
+                    {type.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            {/* <div className={styles.input}>
+                <label htmlFor="type 2">Type 2</label>
                 <select
                   name="Types"
-                  value={pkData.Types}
+                  defaultValue="default"
+                  value={pkData.Types2}
                   onChange={handleInputChange}
                 >
+                  <option value="default"></option>
                   {types.map((type, index) => (
                     <option key={index} value={type.id}>
                       {type.name}
                     </option>
                   ))}
                 </select>
-              </div>
-            </div>
+              </div> */}
           </div>
           <button type="submit">Create Pokemon</button>
         </div>

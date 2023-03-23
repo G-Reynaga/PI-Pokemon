@@ -2,6 +2,7 @@ const { Pokemon, Type } = require("../db");
 const { URL_API_POKEMON_ID_OR_NAME } = require("../utils/GolbalConst");
 const axios = require("axios");
 
+//me permite obtener pokemon por id
 const getById = async (id) => {
   // 1008 es el ult pokemon, lo demas son de la DB (aún siendo UUID)
   try {
@@ -32,11 +33,11 @@ const getById = async (id) => {
         ],
       });
       if (!pokemon) throw new Error("No Pokemon exists with this ID");
-      let cleanPk = {
+      let foundPk = {
         ...pokemon.toJSON(),
-        Types: pokemon.Types.map((type) => type.name + " "),
+        Types: pokemon.types.map((type) => type.name).join(" "),
       };
-      return cleanPk;
+      return foundPk;
     }
   } catch (error) {
     return error.message;

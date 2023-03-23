@@ -31,16 +31,28 @@ const Detail = () => {
               <img src={pk.image} alt={pk.name} />
             </div>
             <div className={styles.datos}>
-              <h3>Life: {pk.life}</h3>
-              <h3>Attack: {pk.attack}</h3>
-              <h3>Defense: {pk.defense}</h3>
-              <h3>Speed: {pk.speed}</h3>
-              <h3>Height: {pk.height} m</h3>
-              <h3>Weight: {pk.weight} kg</h3>
+              <div className={styles.stats}>
+                <h3>HP: {pk.life}</h3>
+                <progress max={"255"} value={pk.life}></progress>
+              </div>
+              <div className={styles.stats}>
+                <h3>ATK: {pk.attack}</h3>
+                <progress max={"255"} value={pk.attack}></progress>
+              </div>
+              <div className={styles.stats}>
+                <h3>DEF: {pk.defense}</h3>
+                <progress max={"255"} value={pk.defense}></progress>
+              </div>
+              <div className={styles.stats}>
+                <h3>SPD: {pk.speed}</h3>
+                <progress max={"255"} value={pk.speed}></progress>
+              </div>
+              <h3>HEIGHT: {pk.height} m</h3>
+              <h3>WEIGHT: {pk.weight} kg</h3>
               {pk.Types
                 ? pk.Types.split(" ").map((type, index) => (
                     <h3 key={index} className={styles.types}>
-                      Type {index + 1}:
+                      TYPE {index + 1}:
                       <span key={index} className={styles[type]}>
                         {type}
                       </span>

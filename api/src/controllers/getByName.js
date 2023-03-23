@@ -1,7 +1,8 @@
 const { Pokemon, Type } = require("../db");
 const { URL_API_POKEMON_ID_OR_NAME } = require("../utils/GolbalConst");
-const axios = reqire("axios");
+const axios = require("axios");
 
+//me permite obtener un pokemon por el name de la API
 const fromApi = async (name) => {
   try {
     let responseApi = await axios(URL_API_POKEMON_ID_OR_NAME + name);
@@ -22,7 +23,7 @@ const fromApi = async (name) => {
     return `No Pokemon Found Whit Name ${name} In API`;
   }
 };
-
+//me permite obtener un pokemon por el name de la DB
 const fromDb = async (name) => {
   try {
     let responseDb = await Pokemon.FindOne({
@@ -36,7 +37,7 @@ const fromDb = async (name) => {
     return error.message;
   }
 };
-
+//me permite obtener un pokemon por el name tanto por el API o DB
 const getByName = async (name) => {
   try {
     let pkFromApi = await fromApi(name);

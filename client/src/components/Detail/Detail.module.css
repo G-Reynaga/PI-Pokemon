@@ -33,17 +33,42 @@
   display: flex;
   justify-content: center;
 }
+.image img{
+  width: 500px;
+}
 .datos {
   background-color: #30a7d7;
   padding: 2rem;
   border-bottom-left-radius: 5rem;
-  columns: 3;
+  columns: 2;
 }
-.datos h3{
+.datos h3 {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stats progress{
+  appearance: none;
+  height: 0.5rem;
+}
+
+.stats progress::-webkit-progress-bar {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.stats progress::-webkit-progress-value {
+  background-color: #313131;
+  border-radius: 5px;
 }
 
 @media (max-width: 600px) {
@@ -64,10 +89,16 @@
   }
   .datos {
     font-size: 0.8rem;
-    columns: 2;
+    columns: 1;
   }
-  .datos h3{
+  .datos h3 {
     padding: 0.2rem;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
   }
 }
 

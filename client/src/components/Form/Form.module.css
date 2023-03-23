@@ -37,7 +37,6 @@
   color: #ff0000;
   font-size: 1rem;
 }
-
 .container button {
   margin: 1rem;
   font-size: 1rem;
@@ -52,8 +51,15 @@
 .container button:active {
   opacity: 0.8;
 }
-
-.container select {
+.select {
+  display: flex;
+  margin-left: 5rem;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+}
+.select select {
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
@@ -65,8 +71,11 @@
   border-radius: 0.5rem;
   text-transform: uppercase;
 }
-
 @media (max-width: 500px) {
+  .container {
+    background: transparent;
+    border-radius: 0;
+  }
   .inputs {
     grid-template-columns: 1fr;
   }
@@ -74,15 +83,16 @@
     margin-bottom: 0.5rem;
     font-size: 1rem;
   }
+  .input label {
+    font-weight: bold;
+    color: #000000;
+  }
   .input input {
-    font-size: 1rem;
+    font-size: 1.5rem;
     outline: none;
   }
-  .container button {
-    padding: 0.5rem;
-  }
-  .container{
-    margin-bottom: 4rem;
-    border-radius: 1rem;
+  .select {
+    color: #000000;
+    font-weight: bold;
   }
 }

@@ -48,6 +48,6 @@ module.exports = (sequelize) => {
           "https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-0.png",
       },
     },
-    { timestamps: false }
+    // { timestamps: false }
   );
 };

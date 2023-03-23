@@ -20,6 +20,7 @@ const Cards = () => {
 
   const handlePageCurrent = (e) => {
     setCurrentPage(Number(e.target.id));
+    // setCurrentPage(e.target.id)
   };
 
   const handlePrevClick = () => {
@@ -63,9 +64,9 @@ const Cards = () => {
             <h2>No Results Found.</h2>
           </div>
         )}
-        {currentItems.map((pokemon) => (
+        {currentItems.map((pokemon, index) => (
           <Card
-            key={pokemon.id}
+            key={index}
             id={pokemon.id}
             name={pokemon.name ? pokemon.name.toUpperCase() : ""}
             image={pokemon.image}

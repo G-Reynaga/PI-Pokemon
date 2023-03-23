@@ -36,7 +36,10 @@ const reducer = (state = initialState, action) => {
     case SEARCH_BY_NAME:
       return {
         ...state,
-        pkToOrder: state.pks.filter((pk) => pk.name === action.payload),
+        // pkToOrder: state.pks.filter((pk) => pk.name === action.payload),
+        pkToOrder: state.pks.filter((pk) =>
+          pk.name && pk.name.toLowerCase().includes(action.payload.toLowerCase())
+        ),
       };
     case FILTER_BY_SOURCE:
       let createdPks;
@@ -59,10 +62,8 @@ const reducer = (state = initialState, action) => {
         pkToOrder: [...state.pkToOrder].sort((a, b) => {
           if (action.payload === "A - Z") {
             if (a.name < b.name) return -1;
-            if (a.name > b.name) return 1;
             return 0;
           } else if (action.payload === "Z - A") {
-            if (a.name < b.name) return 1;
             if (a.name > b.name) return -1;
             return 0;
           } else if (action.payload === "Higher Attack") {

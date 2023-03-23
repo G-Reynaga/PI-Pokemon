@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      {/* permite que solo se vea Home y en las demas pag no se visualice */}
       {location.pathname === "/home" ? <NaBar /> : null}
       <Routes>
         <Route path="/" element={<LandingPage />} />
@@ -21,7 +22,8 @@ function App() {
         <Route path="/form" element={<Form />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      {location.pathname === "/" ? null : <Footer/>}
+      {/* permite que solo se vea Home y en las demas pag no se visualice */}
+      {location.pathname === "/home" ? <Footer/> : null}
     </div>
   );
 }
