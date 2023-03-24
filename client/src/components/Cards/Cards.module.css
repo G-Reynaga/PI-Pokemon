@@ -53,6 +53,7 @@
   font-size: 1rem;
   padding: 0.5rem;
   cursor: pointer;
+  outline: none;
   background-color: rgb(237, 241, 7);
   font-weight: bold;
   border-radius: 0.3rem;
@@ -74,7 +75,7 @@
 .active {
   background-color: rgb(101, 102, 8);
   color: white;
-  transform: scale(1.25);
+  transform: scale(1.5);
 }
 
 @media (max-width: 1280px) {

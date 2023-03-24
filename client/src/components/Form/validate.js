@@ -18,17 +18,29 @@ export const validate = (inputs) => {
   // Check for input format errors
   if (!regexName.test(inputs.name))
     errors.name = " Name can't contain numbers ";
+
   if (!regexUrl.test(inputs.image))
     errors.image = " Image must be a valid URL ";
+
   if (!regexNumber.test(inputs.life)) errors.life = " Life must be a number ";
   if (inputs.life > 80) errors.life = " Life value can't be above 80 ";
   if (inputs.life < 10) errors.life = "Life value can't be below 10 ";
+
   if (!regexNumber.test(inputs.attack))
     errors.attack = " Attack must be a number ";
+  if (inputs.attack > 255) errors.attack = "Attack value can't be above 255";
+  if (inputs.attack < 10) errors.attack = "Attack value can't be below 10 ";
+
   if (!regexNumber.test(inputs.defense))
     errors.defense = " Defense must be a number ";
+  if (inputs.defense > 255) errors.defense = "Defense value can't be above 255";
+  if (inputs.defense < 10) errors.defense = "Defense value can't be below 10 ";
+
   if (!regexNumber.test(inputs.speed))
     errors.speed = " Speed must be a number ";
+  if (inputs.speed > 255) errors.speed = "Speed value can't be above 255";
+  if (inputs.speed < 10) errors.speed = "Speed value can't be below 10 ";
+
   if (!regexNumber.test(inputs.height))
     errors.height = " Height must be a number ";
   if (!regexNumber.test(inputs.weight))

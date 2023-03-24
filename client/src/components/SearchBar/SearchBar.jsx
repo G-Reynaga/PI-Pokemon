@@ -2,12 +2,10 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchByName } from "../../redux/actions.js";
-import Hamburguesa from "../Hamburguesa/Hamburguesa";
 import styles from "./Search.module.css";
 
 const SearchBar = () => {
   const [pkSearch, setPkSearch] = useState("");
-  const [isActive, setIsActive] = useState(true);
 
   const dispach = useDispatch();
 
@@ -21,23 +19,17 @@ const SearchBar = () => {
   };
 
   const navigate = useNavigate();
-  const handleNaviagate = () => navigate("/form");
-
-  const handleToggleActive = () => {
-    // cuando se da click lo pasa de true a false y viceversa
-    setIsActive((prevIsActive) => !prevIsActive);
-  };
+  const handleNavigate = () => navigate("/form");
 
   return (
     <form onSubmit={handleSearch}>
-      <div>
-        <div className={styles.burguer}>
-          <Hamburguesa handleClick={handleToggleActive} isActive={isActive} />
-        </div>
-        <div className={`${styles.search} ${isActive ? styles.active : ""}`}>
+      <div className={styles.searchbar}>
+        <div className={`${styles.search}`}>
           <input type="search" onChange={handleChange} value={pkSearch} />
-          <button>Search</button>
-          <button onClick={handleNaviagate}>Create Pokemon</button>
+          <div className={styles.button}>
+            <button>Search</button>
+            <button onClick={handleNavigate}>Create Pokemon</button>
+          </div>
         </div>
       </div>
     </form>

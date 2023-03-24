@@ -114,7 +114,7 @@ const Form = () => {
                 <input
                   type="text"
                   name="name"
-                  value={pkData.name}
+                  value={pkData.name.toLowerCase()}
                   onChange={handleInputChange}
                 />
                 <p>{errors.name}</p>

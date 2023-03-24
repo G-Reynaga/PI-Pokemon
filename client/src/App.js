@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
-import NaBar from "./components/NavBar/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Home from "./components/Home/Home";
 import Form from "./components/Form/Form";
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       {/* permite que solo se vea Home y en las demas pag no se visualice */}
-      {location.pathname === "/home" ? <NaBar /> : null}
+      {location.pathname === "/home" ? <NavBar /> : null}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
