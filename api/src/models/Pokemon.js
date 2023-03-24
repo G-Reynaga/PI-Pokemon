@@ -44,10 +44,10 @@ module.exports = (sequelize) => {
       image: {
         type: DataTypes.STRING,
         validate: { isUrl: true },
-        defaultValue:
-          "https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-0.png",
+        // defaultValue:
+        //   "https://imagenpng.com/wp-content/uploads/2016/09/Pokebola-pokeball-png-0.png",
       },
-    },
+    }
     // { timestamps: false }
   );
 };

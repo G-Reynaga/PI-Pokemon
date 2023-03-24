@@ -5,12 +5,11 @@ const { URL_API_POKEMON } = require("../utils/GolbalConst");
 const getAllApi = async () => {
   try {
     const promises = [];
-    // while (promises.length < 160) {}
     let url = URL_API_POKEMON;
     //me permite obtener los pokemons de la pokeapi
     const { data } = await axios.get(`${url}?limit=151&offset=0`);
     promises.push(...data.results);
-    // url = data.next;
+    url = data.next;
 
     const resultPromises = await Promise.all(
       promises.map(async (promise) => {
@@ -77,7 +76,8 @@ const getAll = async () => {
     }
 
     let pkFromApi = await getAllApi();
-    let allPk = pkFromApi.concat(pkFromDb);
+    
+    let allPk = pkFromDb.concat(pkFromApi);
 
     if (!allPk.length) {
       throw new Error("No Pokemons Found");

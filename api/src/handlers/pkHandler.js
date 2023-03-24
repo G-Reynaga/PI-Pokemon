@@ -11,7 +11,8 @@ const getPksHandler = async (req, res) => {
     if (name) allPokemons = await getByName(name);
     else allPokemons = await getAll();
 
-    if (allPokemons.error) throw new Error(allPokemons.error);
+    if (!allPokemons) throw new Error('Error loading Pokemons');
+    if (allPokemons.error) throw new Error(`Error when obtaining Pokemon: ${allPokemons.error}`);
 
     return res.status(200).json(allPokemons);
   } catch (error) {
@@ -23,7 +24,8 @@ const getPkHandler = async (req, res) => {
   try {
     const pk = await getById(req.params.id);
 
-    if (pk.error) throw new Error(pk.error);
+    if (!pk) throw new Error("Error when obtaining Pokemon by ID");
+    if (pk.error) throw new Error(`Error by ID: ${pk.error}`);
 
     return res.status(200).json(pk);
   } catch (error) {
