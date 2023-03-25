@@ -24,8 +24,8 @@ const Detail = () => {
           <button onClick={handleNavigate}>Go back to Home Page</button>
           <div className="animate__animated animate__fadeIn">
             <div className={styles.posicion}>
-              <h1>{pk.name ? pk.name.toUpperCase() : ""}</h1>
               <h1>N°: {pk.id}</h1>
+              <h1>{pk.name ? pk.name.toUpperCase() : ""}</h1>
             </div>
             <div className={styles.image}>
               <img src={pk.image} alt={pk.name} />

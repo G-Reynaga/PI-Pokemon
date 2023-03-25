@@ -56,7 +56,9 @@ const reducer = (state = initialState, action) => {
     case FILTER_BY_TYPE:
       return {
         ...state,
-        pkToOrder: [...state.pks].filter((pk) => pk.Types.includes(action.payload)),
+        pkToOrder: [...state.pks].filter((pk) =>
+          pk.Types.includes(action.payload)
+        ),
       };
     case ORDER_BY:
       return {
@@ -79,7 +81,13 @@ const reducer = (state = initialState, action) => {
             return 0;
           } else if (action.payload === "Lower Life") {
             if (a.life < b.life) return -1;
-            return 0
+            return 0;
+          } else if (action.payload === "Higher Defense") {
+            if (a.defense > b.defense) return -1;
+            return 0;
+          } else if (action.payload === "Lower Defense") {
+            if (a.defense < b.defense) return -1;
+            return 0;
           }
           return 0;
         }),

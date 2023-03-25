@@ -39,6 +39,8 @@ const Home = () => {
             <option value="Lower Attack">LOWER ATTACK</option>
             <option value="Higher Life">HIGHER LIFE</option>
             <option value="Lower Life">LOWER LIFE</option>
+            <option value="Higher Defense">HIGHER DEFENSE</option>
+            <option value="Lower Defense">LOWER DEFENSE</option>
           </select>
         </div>
         <div>
@@ -71,19 +73,19 @@ const Home = () => {
             <option value="flying">FLYING</option>
             <option value="rock">ROCK</option>
             <option value="bug">BUG</option>
+            <option value="ground">GROUND</option>
             <option value="fighting">FIGHTING</option>
             <option value="electric">ELECTRIC</option>
+            <option value="poison">POISON</option>
+            <option value="ghost">GHOST</option>
             <option value="ice">ICE</option>
-            <option value="ground">GROUND</option>
             <option value="steel">STELL</option>
             <option value="dark">DARK</option>
             <option value="psychic">PSYCHIC</option>
-            <option value="unknown">UNKNOWN</option>
-            <option value="poison">POISON</option>
-            <option value="shadow">SHADOW</option>
             <option value="dragon">DRAGON</option>
             <option value="fairy">FAIRY</option>
-            <option value="ghost">GHOST</option>
+            <option value="shadow">SHADOW</option>
+            <option value="unknown">UNKNOWN</option>
           </select>
         </div>
       </div>

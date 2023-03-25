@@ -23,8 +23,8 @@ const NavBar = () => {
             <Hamburguesa handleClick={handleToggleActive} isActive={isActive} />
           </div>
           <div className={`${style.links} ${isActive ? style.active : ""}`}>
-            <Link className={style.link} to="/gen2">
-              2 GEN
+            <Link className={style.link} to="/about">
+              ABOUT
             </Link>
             <div className={style.search}>
               <SearchBar />
