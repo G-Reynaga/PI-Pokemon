@@ -7,7 +7,7 @@ const getAllApi = async () => {
     const promises = [];
     let url = URL_API_POKEMON;
     //me permite obtener los pokemons de la pokeapi
-    const { data } = await axios.get(`${url}?limit=251&offset=0`);
+    const { data } = await axios.get(`${url}?limit=151&offset=0`);
     promises.push(...data.results);
     url = data.next;
 

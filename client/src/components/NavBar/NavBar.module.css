@@ -37,10 +37,27 @@
   background-color: #424242;
   border-radius: 1rem;
 }
-@media (max-width: 900px) {
+
+@media only screen and (max-width: 480px) {
+  /* Estilos para dispositivos móviles */
   .links {
     display: flex;
     flex-direction: column-reverse;
+  }
+  .link {
+    font-weight: bold;
+    font-size: 1rem
+  }
+  .active {
+    position: absolute;
+    top: -30%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  /* Estilos para tabletas */
+  .links {
+    display: flex;
   }
   .link {
     font-weight: bold;

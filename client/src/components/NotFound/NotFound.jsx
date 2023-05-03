@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import e404 from "../../img/psyduck.png";
+import e404 from "../../img/Error.png";
 import styles from "./NotFound.module.css";
 
 const NotFound = () => {

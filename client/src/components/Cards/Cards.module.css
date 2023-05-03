@@ -1,3 +1,7 @@
+.cardContainer{
+  display: flex;
+  flex-direction: column-reverse;
+}
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
@@ -32,7 +36,7 @@
   justify-content: center;
 }
 .arrow {
-  margin: 0.5rem 0.5rem 6rem;
+  margin: 0.5rem 0.5rem;
   padding: 0.5rem;
   cursor: pointer;
   background-color: rgb(237, 241, 7);
@@ -49,7 +53,7 @@
   width: 1rem;
 }
 .pages {
-  margin: 0.5rem 0.5rem 6rem;
+  margin: 0.5rem 0.5rem;
   font-size: 1rem;
   padding: 0.5rem;
   cursor: pointer;
@@ -79,12 +83,17 @@
 }
 
 @media (max-width: 1280px) {
+  .container{
+    padding-bottom: 100px;
+  }
   .pages {
     margin: 0.5rem;
-    margin-bottom: 6rem;
   }
 }
 @media (max-width: 500px) {
+  .container{
+    padding-bottom: 100px;
+  }
   .pages {
     display: none;
   }

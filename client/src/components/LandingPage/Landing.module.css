@@ -1,19 +1,35 @@
 .container {
-  background: url(../../img/fondo.jpg) center center;
+  background: url(../../img/fondo-pokemon.jpg) center center;
   height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   display: grid;
   place-items: center;
 }
 
 .container div {
   border-radius: 3rem;
-  width: 50rem;
-  height: 50rem;
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  box-shadow: 10px 16px 10px rgba(0, 0, 0, 0.10);
-  display: grid;
-  place-items: center;
+  box-shadow: 10px 16px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.landing {
+  display: flex;
+}
+
+.introLanding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.introLanding button{
+  margin: 1rem;
 }
 
 .container img {
@@ -46,18 +62,25 @@
   opacity: 0.8;
 }
 
-@media (max-width: 600px) {
-  .container div{
-    width: 20rem;
-    height: 22rem;
+@media only screen and (max-width: 480px) {
+  /* Estilos para dispositivos móviles */
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  /* Estilos para tabletas */
+  .landing {
+    /* flex-direction: column-reverse; */
   }
-  .container img{
-    width: 15rem;
+  .container img {
+    width: 20rem;
   }
   .container h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
-  .container button{
-    font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) and (max-width: 1280px) {
+  /* Estilos para Laptos */
+  .container img {
+    width: 30rem;
   }
 }

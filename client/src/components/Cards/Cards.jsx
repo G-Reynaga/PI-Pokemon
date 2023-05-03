@@ -56,7 +56,7 @@ const Cards = () => {
   };
 
   return (
-    <div>
+    <div className={styles.cardContainer}>
       <div className={styles.container}>
         {!pks.length && (
           <div className={styles.noFound}>
