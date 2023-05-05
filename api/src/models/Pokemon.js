@@ -7,9 +7,9 @@ module.exports = (sequelize) => {
     "pokemon",
     {
       id: {
-        // type: DataTypes.UUID, //para que me genere un Id unico(Una columna que almacena un identificador universal único. Úselo con UUIDV1 o UUIDV4 para valores predeterminados.)
-        // defaultValue: DataTypes.UUIDV4, //Un identificador universal único por defecto generado según la norma UUID v4
-        type: DataTypes.INTEGER,
+        type: DataTypes.UUID, //para que me genere un Id unico(Una columna que almacena un identificador universal único. Úselo con UUIDV1 o UUIDV4 para valores predeterminados.)
+        defaultValue: DataTypes.UUIDV4, //Un identificador universal único por defecto generado según la norma UUID v4
+        // type: DataTypes.INTEGER,
         primaryKey: true,
       },
       name: {

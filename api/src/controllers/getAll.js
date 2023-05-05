@@ -32,23 +32,23 @@ const getAllApi = async () => {
       };
     });
 
-    //Aquí iteramos sobre los objetos pkFromApi para crear una instancia del modelo de Pokemon y guardarla en la base de datos.
-    for (let i = 0; i < pkFromApi.length; i++) {
-      const pokemonData = pkFromApi[i];
+    // //Aquí iteramos sobre los objetos pkFromApi para crear una instancia del modelo de Pokemon y guardarla en la base de datos.
+    // for (let i = 0; i < pkFromApi.length; i++) {
+    //   const pokemonData = pkFromApi[i];
 
-      //busca en la base de datos un pokemon con el mismo ID que el pokemon actual
-      const existingPokemon = await Pokemon.findOne({
-        where: { id: pokemonData.id },
-      });
+    //   //busca en la base de datos un pokemon con el mismo ID que el pokemon actual
+    //   const existingPokemon = await Pokemon.findOne({
+    //     where: { id: pokemonData.id },
+    //   });
 
-      if (existingPokemon) {
-        //si ya existe el pokemon en la base de datos, actualiza sus datos
-        await existingPokemon.update(pokemonData);
-      } else {
-        //si no existe el pokemon en la base de datos, crea una nueva instancia del modelo y guarda los datos
-        await Pokemon.create(pokemonData);
-      }
-    }
+    //   if (existingPokemon) {
+    //     //si ya existe el pokemon en la base de datos, actualiza sus datos
+    //     await existingPokemon.update(pokemonData);
+    //   } else {
+    //     //si no existe el pokemon en la base de datos, crea una nueva instancia del modelo y guarda los datos
+    //     await Pokemon.create(pokemonData);
+    //   }
+    // }
 
     return pkFromApi;
   } catch (error) {
