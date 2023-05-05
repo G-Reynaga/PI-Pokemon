@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { searchByName } from "../../redux/actions.js";
@@ -7,7 +7,7 @@ import styles from "./Search.module.css";
 const SearchBar = () => {
   const [pkSearch, setPkSearch] = useState("");
 
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setPkSearch(e.target.value);
@@ -15,11 +15,23 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispach(searchByName(pkSearch));
+    dispatch(searchByName(pkSearch));
   };
 
   const navigate = useNavigate();
   const handleNavigate = () => navigate("/form");
+
+  useEffect(() => {
+    if (pkSearch !== "") {
+      const timeoutId = setTimeout(() => {
+        dispatch(searchByName(pkSearch));
+      }, 300);
+      // Resetea el timeout si pkSearch cambia antes de que se cumpla
+      return () => clearTimeout(timeoutId);
+    }else{
+      dispatch(searchByName(pkSearch));
+    }
+  }, [pkSearch, dispatch]);
 
   return (
     <form onSubmit={handleSearch}>
