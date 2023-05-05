@@ -12,7 +12,7 @@ import {
 export const getPks = () => {
   return async function (dispatch) {
     try {
-      const apiData = await axios.get("http://localhost:3001/pokemon");
+      const apiData = await axios.get("/pokemon");
       const pks = apiData.data;
       dispatch({ type: GET_POKEMONS, payload: pks });
     } catch (error) {
@@ -24,7 +24,7 @@ export const getPks = () => {
 export const getPk = (id) => {
   return async function (dispatch) {
     try {
-      const apiData = await axios.get(`http://localhost:3001/pokemon/${id}`);
+      const apiData = await axios.get(`/pokemon/${id}`);
       const pk = apiData.data;
       dispatch({ type: GET_POKEMON, payload: pk });
     } catch (error) {
@@ -36,7 +36,7 @@ export const getPk = (id) => {
 export const getTypes = () => {
   return async function (dispatch) {
     try {
-      const apiData = await axios.get("http://localhost:3001/types");
+      const apiData = await axios.get("/types");
       const types = apiData.data;
       dispatch({ type: GET_TYPES, payload: types });
     } catch (error) {
