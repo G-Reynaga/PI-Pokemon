@@ -56,14 +56,24 @@ const Cards = () => {
   };
 
   return (
-    <div className={styles.cardContainer}>
+    <>
+      <ul className={styles.lista}>
+        <button className={styles.arrow} onClick={handlePrevClick}>
+          <img src={prev} alt="prev" />
+        </button>
+        {renderPageNumbers()}
+        <button className={styles.arrow} onClick={handleNextClick}>
+          <img src={next} alt="next" />
+        </button>
+      </ul>
+
+      {!pks.length && (
+        <div className={styles.noFound}>
+          <img src={pokeball} alt="No Results Found" />
+          <h2>No Results Found.</h2>
+        </div>
+      )}
       <div className={styles.container}>
-        {!pks.length && (
-          <div className={styles.noFound}>
-            <img src={pokeball} alt="No Results Found" />
-            <h2>No Results Found.</h2>
-          </div>
-        )}
         {currentItems.map((pokemon, index) => (
           <Card
             key={index}
@@ -74,16 +84,7 @@ const Cards = () => {
           />
         ))}
       </div>
-      <ul className={styles.lista}>
-        <button className={styles.arrow} onClick={handlePrevClick}>
-          <img src={prev} alt="prev" />
-        </button>
-        {renderPageNumbers()}
-        <button className={styles.arrow} onClick={handleNextClick}>
-          <img src={next} alt="next" />
-        </button>
-      </ul>
-    </div>
+    </>
   );
 };
 
