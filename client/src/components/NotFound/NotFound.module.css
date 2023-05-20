@@ -3,21 +3,13 @@
   place-items: center;
   height: 100vh;
 }
-.error {
-  background: url(../../img/gray_bg.png);
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: 10px 16px 6px rgba(0, 0, 0, 0.25);
-  padding: 0 2rem;
-}
-.error h1{
-  font-size: 8rem;
+.error h1 {
+  font-size: 15rem;
   text-shadow: 5px 5px 3px rgb(211, 194, 12);
 }
 .error img {
-  width: 15rem;
+  width: 55rem;
+  filter: drop-shadow(15px 15px 3px rgb(211, 194, 12));
 }
 .error button {
   margin: 1rem;
@@ -28,22 +20,28 @@
   padding: 0.5rem;
   font-weight: bold;
   background-color: rgb(237, 241, 7);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+  transition: all .2s ease-in-out;
+}
+.error button:hover {
+  background-color: rgb(118, 120, 2);
+  color: #fff;
 }
 .error button:active {
   opacity: 0.5;
 }
 
 @media (max-width: 500px) {
-  .error{
+  .error {
     padding: 0 0.5rem;
   }
-  .error h1{
+  .error h1 {
     font-size: 5rem;
   }
   .error img {
     width: 10rem;
   }
-  .error button{
+  .error button {
     font-size: 1rem;
   }
 }

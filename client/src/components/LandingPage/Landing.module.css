@@ -34,6 +34,7 @@
 
 .container img {
   width: 40rem;
+  filter: drop-shadow(25px -5px 8px rgba(0, 0, 0, 0.5));
 }
 
 .container h1 {
@@ -68,9 +69,6 @@
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {
   /* Estilos para tabletas */
-  .landing {
-    /* flex-direction: column-reverse; */
-  }
   .container img {
     width: 20rem;
   }
